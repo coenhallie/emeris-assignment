@@ -3,7 +3,9 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <div class="min-h-screen bg-blue-100">
+    <router-view/>
+  </div>
 </template>
 
 <style lang="scss">

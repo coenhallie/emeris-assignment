@@ -1,12 +1,19 @@
 <template>
-  <h1>Token Swap</h1>
+  <div>
+    <TokenSwapContainer />
+  </div>
 </template>
 
 <script>
+import TokenSwapContainer from '@/components/TokenSwapContainer.vue';
+
 export default {
-  name: 'HelloWorld',
+  name: 'Dashboard',
   props: {
     msg: String,
+  },
+  components: {
+    TokenSwapContainer,
   },
 };
 </script>
