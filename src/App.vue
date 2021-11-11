@@ -1,12 +1,51 @@
 <template>
-  <div id="nav">
+  <div id="nav dark:bg-gray-800 bg-white">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <div class="account-number text-right">{{main.accountAddress}}</div>
+    <button class="text-left" @click="toggleMode()"> toggle Theme </button>
   </div>
-  <div class="min-h-screen bg-blue-100">
+  <div class="min-h-screen bg-gray-100 dark:bg-gray-700">
     <router-view/>
   </div>
 </template>
+
+<script>
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useTokenStore } from '@/store/useTokens';
+
+export default {
+  setup() {
+    const main = useTokenStore();
+    const { accountAddress, fetchAccountAddress } = storeToRefs(main);
+    main.fetchAccountAddress();
+
+    const toggleMode = () => {
+      if (localStorage.theme === undefined) {
+        localStorage.theme = 'dark';
+      }
+      // eslint-disable-next-line no-unused-expressions
+      localStorage.theme === 'light' ? localStorage.theme = 'dark' : localStorage.theme = 'light';
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+
+    onMounted(() => main.fetchAccountAddress());
+
+    return {
+      main,
+      toggleMode,
+      accountAddress,
+      fetchAccountAddress,
+    };
+  },
+
+};
+</script>
 
 <style lang="scss">
 #app {

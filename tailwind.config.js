@@ -1,11 +1,17 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./src/**/*.vue'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     // container: {
     //   center: true,
     // },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
     extend: {},

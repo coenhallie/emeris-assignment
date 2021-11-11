@@ -1,5 +1,5 @@
 module.exports = {
-  root: true,
+  root: false, // enable eslint after development
   env: {
     node: true,
   },
