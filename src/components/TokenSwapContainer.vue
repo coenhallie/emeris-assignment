@@ -32,8 +32,8 @@
         <h3 class="font-semibold text-left dark:text-white">To (estimated)</h3>
         <div class="grid grid-flow-col
         auto-cols-max justify-between">
-          <p v-if="main.poolTokenInfo" class="text-3xl dark:text-white">{{ calculateAmount }}</p>
-          <p v-if="!main.poolTokenInfo" class="text-3xl dark:text-white">0</p>
+          <p v-if="main.poolTokenInfo" class="text-3xl dark:text-white py-1">{{ calculateAmount }}</p>
+          <p v-if="!main.poolTokenInfo" class="text-3xl dark:text-white py-1">0</p>
           <button v-if="main.toToken === ''" @click="main.openTokenModal('to')" class="px-3 w-42 text-white flex items-center font-semibold
           rounded-3xl bg-blue-500"> Select token
           <svg width="17" height="7" fill="none">
@@ -52,7 +52,7 @@
       </div>
       <token-selection-modal v-if="main.showTokenModal" />
       <div class="m-4">
-        <button v-if="toToken && main.poolTokenInfo" class="px-3 py-4 bg-blue-200 w-full rounded-3xl
+        <button v-if="toToken && main.poolTokenInfo" class="px-3 py-4 bg-blue-200 dark:bg-blue-400 w-full rounded-3xl
          text-2xl text-blue-600 text-opacity-50 font-semibold dark:text-white"> swap</button>
          <button disabled v-if="!toToken" class="px-3 py-4 bg-blue-200 w-full rounded-3xl
          text-2xl text-blue-600 text-opacity-50 font-semibold dark:text-white dark:bg-blue-400"> Select token</button>
@@ -61,7 +61,7 @@
       </div>
       <div v-if="main.poolTokenPrice"> {{main.poolTokenInfo}} per 1 {{main.toToken}} </div>
     </div>
-</div>
+  </div>
   <token-pool-details v-if="main.poolTokenInfo" />
 </template>
 
@@ -85,7 +85,6 @@ export default {
     TokenPoolDetails,
   },
   setup() {
-    const openTokenSelectionModal = ref(false);
     const main = useTokenStore();
     const toTokenAmount = ref(0);
     const {
@@ -105,7 +104,6 @@ export default {
       arrowDivider,
       arrowDownWhite,
       TokenSelectionModal,
-      openTokenSelectionModal,
       openTokenModal,
       main,
       tokens,
@@ -119,7 +117,6 @@ export default {
       showTokenModal,
       toTokenAmount,
       calculateAmount,
-      // calculateOther,
     };
   },
 };

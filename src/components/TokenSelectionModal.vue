@@ -41,13 +41,13 @@
               </DialogTitle>
               <div v-if="main.toOrFrom === 'from' " class="flex flex-col h-64 overflow-auto">
                 <button @click="main.selectFromToken(token)" v-for="(token, index) in main.balances" :key="index" class="text-lg text-left py-3 hover:bg-gray-100 flex justify-between dark:text-white dark:hover:bg-gray-700">
-                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7 mr-3"> {{token.token}}
+                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7"> <p class="text-left">{{token.token}}</p>
                 <div class="text-right pr-4 text-gray-400">{{token.balance}}</div>
                 </button>
               </div>
               <div v-if="main.toOrFrom === 'to' " class="flex flex-col h-64 overflow-auto">
                 <button @click="main.selectToToken(token)" v-for="(token, index) in main.balances" :key="index" class="text-lg text-left py-3 hover:bg-gray-100 flex justify-between dark:text-white dark:hover:bg-gray-700">
-                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7 mr-3"> {{token.token}} <div class="text-right pr-4 text-gray-400 pl-60">{{token.balance}}</div>
+                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7"> <p class="text-left">{{token.token}}</p> <div class="text-right pr-4 text-gray-400 pl-60">{{token.balance}}</div>
                 </button>
               </div>
             </div>

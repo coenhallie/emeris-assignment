@@ -9,6 +9,7 @@ export const useTokenStore = defineStore('main', {
     tokens: [],
     balances: [],
     pools: [],
+    darkMode: false,
     accountAddress: '',
     fromToken: '',
     toToken: '',
