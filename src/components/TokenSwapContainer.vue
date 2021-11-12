@@ -93,7 +93,7 @@ export default {
     main.fetchPools();
 
     main.$subscribe(() => {
-      main.poolTokenInfo = main.pools.find((pool) => (pool.tokenA === main.fromToken.token || pool.tokenA === main.toToken.token) && (pool.tokenB === main.fromToken.token || pool.tokenB === main.toToken.token));
+      main.poolTokenInfo = main.pools.find((pool) => (pool.tokenA === main.fromToken.token) && (pool.tokenB === main.toToken.token));
     });
 
     const calculateAmount = computed(() => Math.round((toTokenAmount.value / main.poolTokenInfo.price) * 100) / 100);
