@@ -27,7 +27,7 @@
         </div>
         <p v-if="fromToken.balance" class="text-left text-sm font-semibold text-gray-500 dark:text-white">Balance: {{fromToken.balance}} {{fromToken.token}}</p>
       </div>
-      <img :src="arrowDivider" alt="arrow-divider" class="m-4 text-center" />
+      <div class="flex align-middle justify-center"><img :src="arrowDivider" alt="arrow-divider" class="m-4 text-center" /></div>
       <div class="m-2 p-2 border-solid border border-gray-100 dark:border-opacity-10 rounded-3xl">
         <h3 class="font-semibold text-left dark:text-white">To (estimated)</h3>
         <div class="grid grid-flow-col

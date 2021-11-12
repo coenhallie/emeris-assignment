@@ -1,8 +1,6 @@
 <template>
-  <div id="nav dark:bg-gray-800 bg-white">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <div class="account-number text-right px-8"><p class="bg-red text-white rounded-lg text-lg">{{main.accountAddress}}</p></div>
+  <div class="grid grid-cols-2 dark:bg-gray-700 bg-gray-100 border-b border-gray-300 dark:border-gray-500">
+    <button class="bg-red text-black rounded-lg text-lg">{{main.accountAddress}}</button>
     <button class="text-left" @click="toggleMode()"> toggle Theme </button>
   </div>
   <div class="min-h-screen bg-gray-100 dark:bg-gray-700">
@@ -11,7 +9,6 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useTokenStore } from '@/store/useTokens';
 
@@ -33,8 +30,6 @@ export default {
         document.documentElement.classList.remove('dark');
       }
     };
-
-    onMounted(() => main.fetchAccountAddress());
 
     return {
       main,
