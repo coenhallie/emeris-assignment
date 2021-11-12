@@ -31,23 +31,23 @@
             leave-to="opacity-0 scale-95"
           >
             <div
-              class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+              class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl dark:bg-gray-800"
             >
               <DialogTitle
                 as="h3"
-                class="text-lg font-medium leading-6 text-gray-900"
+                class="text-lg font-medium leading-6 text-gray-900 py-4 dark:text-white"
               >
                 Select a token
               </DialogTitle>
-              <input v-model="tokenSearch" type="text" placeholder="search token" class="my-3 rounded-2xl w-full">
               <div v-if="main.toOrFrom === 'from' " class="flex flex-col h-64 overflow-auto">
-                <button @click="main.selectFromToken(token)" v-for="(token, index) in main.balances" :key="index" class="text-lg text-left py-3 hover:bg-gray-100 flex justify-between">
-                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7"> {{token.token}} <div class="text-right pr-4 text-gray-400">{{token.balance}}</div>
+                <button @click="main.selectFromToken(token)" v-for="(token, index) in main.balances" :key="index" class="text-lg text-left py-3 hover:bg-gray-100 flex justify-between dark:text-white dark:hover:bg-gray-700">
+                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7 mr-3"> {{token.token}}
+                <div class="text-right pr-4 text-gray-400">{{token.balance}}</div>
                 </button>
               </div>
               <div v-if="main.toOrFrom === 'to' " class="flex flex-col h-64 overflow-auto">
-                <button @click="main.selectToToken(token)" v-for="(token, index) in main.balances" :key="index" class="text-lg text-left py-3 hover:bg-gray-100 flex justify-between">
-                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7"> {{token.token}} <div class="text-right pr-4 text-gray-400">{{token.balance}}</div>
+                <button @click="main.selectToToken(token)" v-for="(token, index) in main.balances" :key="index" class="text-lg text-left py-3 hover:bg-gray-100 flex justify-between dark:text-white dark:hover:bg-gray-700">
+                  <img :src="`icons/${token.token}.png`" :alt="token.token" class="w-7 h-7 mr-3"> {{token.token}} <div class="text-right pr-4 text-gray-400 pl-60">{{token.balance}}</div>
                 </button>
               </div>
             </div>
@@ -59,9 +59,8 @@
 </template>
 
 <script>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
-import { useTokenStore } from '@/store/useTokens';
 import {
   TransitionRoot,
   TransitionChild,
@@ -69,6 +68,7 @@ import {
   DialogOverlay,
   DialogTitle,
 } from '@headlessui/vue';
+import { useTokenStore } from '@/store/useTokens';
 
 export default {
   components: {

@@ -2,7 +2,7 @@
   <div id="nav dark:bg-gray-800 bg-white">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-    <div class="account-number text-right">{{main.accountAddress}}</div>
+    <div class="account-number text-right px-8"><p class="bg-red text-white rounded-lg text-lg">{{main.accountAddress}}</p></div>
     <button class="text-left" @click="toggleMode()"> toggle Theme </button>
   </div>
   <div class="min-h-screen bg-gray-100 dark:bg-gray-700">
