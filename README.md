@@ -9,7 +9,7 @@
 
 ## About The Project
 
-I had to develop a token swap application for a well-known blockchain company with provided JSON mock data.
+I have developed a token swap application for a well-known blockchain company with provided JSON mock data.
 
 ### URL to access the view the assignment
 
