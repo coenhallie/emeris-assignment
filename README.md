@@ -1,24 +1,35 @@
-# emeris-assignment
+<div align="center">
+  <a href="https://emeris-assignment.vercel.app">
+    <img src="https://raw.githubusercontent.com/coenhallie/emeris-assignment/emeris-assignment/public/swapperlogo.png" alt="Logo" width="300" height="100">
+  </a>
 
-## Project setup
-```
-npm install
-```
+  <h3 align="center">Swapper Token Swap</h3>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+</div>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## About The Project
 
-### Lints and fixes files
-```
-npm run lint
-```
+I had to develop a token swap application for a well-known blockchain company with provided JSON mock data.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### URL to access the view the assignment
+
+* https://emeris-assignment.vercel.app/
+
+### Built With
+
+- Vue.js
+- Pinia state management
+- TailwindCSS
+- Axios
+- My-JSON-Server to mock API requests
+
+
+
+### Project setup
+
+- Clone and run 'npm install'
+- run 'npm run server'
+- Enjoy!
+
+
+- Coen Hallie
